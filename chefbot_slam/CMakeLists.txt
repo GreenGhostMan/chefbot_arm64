@@ -201,37 +201,3 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(square_1m src/square.cpp)
-target_link_libraries(square_1m ${catkin_LIBRARIES})
-
-add_executable(forward src/forward.cpp)
-target_link_libraries(forward ${catkin_LIBRARIES})
-
-add_executable(move_base_fw_bw src/move_base_fw_bw.cpp)
-target_link_libraries(move_base_fw_bw ${catkin_LIBRARIES})
-
-add_executable(custom_x_y_goal src/custom_x_y_goal.cpp)
-target_link_libraries(custom_x_y_goal ${catkin_LIBRARIES})
-
-add_executable(send_goal src/send_goal.cpp)
-target_link_libraries(send_goal ${catkin_LIBRARIES})
-
-install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h"
-  PATTERN "*.hpp"
-  PATTERN ".svn" EXCLUDE
-)
-
-install(TARGETS square_1m forward move_base_fw_bw custom_x_y_goal send_goal
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
- install(FILES
-   launch/gmapping_demo.launch
-   launch/amcl_demo.launch
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
- )

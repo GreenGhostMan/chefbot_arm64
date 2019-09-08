@@ -210,24 +210,15 @@ include_directories(
 add_executable(base_controller src/base_controller.cpp)
 target_link_libraries(base_controller ${catkin_LIBRARIES})
 
-#add_executable(base_controller_imu src/base_controller_with_imu.cpp)
-#target_link_libraries(base_controller_imu ${catkin_LIBRARIES})
-
-add_executable(forward_1meter src/forward_1m.cpp)
-target_link_libraries(forward_1meter ${catkin_LIBRARIES})
-
 add_executable(twist_to_motors src/twist_to_motors.cpp)
 target_link_libraries(twist_to_motors ${catkin_LIBRARIES})
-
-#add_executable(forward_backward src/forward_backward.cpp)
-#target_link_libraries(forward_backward ${catkin_LIBRARIES})
 
 #--------------------------------------------------------------------
 catkin_install_python(PROGRAMS scripts/arduino_node_with_remove_imu_remove_serial.py
  scripts/SerialDataGateway.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
-install(TARGETS base_controller forward_1meter twist_to_motors
+install(TARGETS base_controller twist_to_motors
    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
