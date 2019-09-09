@@ -1,0 +1,10 @@
+#!/bin/bash
+# i love you #
+echo "s=\`hostname -I\`" >> ~/.bashrc
+echo "export ROS_MASTER_URI=http://\$s:11311" >> ~/.bashrc
+echo "export ROS_HOSTNAME=\$s" >> ~/.bashrc
+echo "export ROS_IP=\$s" >> ~/.bashrc
+
+
+
+
