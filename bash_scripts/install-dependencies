@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo apt install ros-kinetic-turtlebot-description
+sudo apt install ros-kinetic-robot-state-publisher
+sudo apt install ros-kinetic-gmapping
+sudo apt install python-serial
+sudo usermod -aG dialout $(USER)
+
