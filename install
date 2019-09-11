@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./bash_scripts/install-ros-network
+./bash_scripts/install-udev-rules
+
+
