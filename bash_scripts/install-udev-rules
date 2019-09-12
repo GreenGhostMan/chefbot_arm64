@@ -1,5 +1,7 @@
 #!/bin/bash
 
 sudo cp 80-rom1.rules /etc/udev/rules.d
-sudo udevadm control --reload
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
 
